@@ -9,7 +9,7 @@ var letterToGuess = null;
 //Letter for comp
 var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-//Computer picks a random letter
+//Computer picking a random letter
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
 //function for guesses left
@@ -17,14 +17,16 @@ var chgGuessesLeft = function() {
   document.querySelector('#guess-left').innerHTML = "Guesses left: " + guessesLeft;
 };
 
+//Making the letter the user needs to guess
 var compLetter = function() {
   this.letterToGuess = this.computerChoices[Math.floor(Math.random() * this.computerChoices.length)];
 };
-var chgGuessesSoFar = function() {
-  // Here we take the guesses the user has tried -- then display it as letters separated by commas. 
+
+//Function to show user guess
+var chgGuessesSoFar = function() { 
   document.querySelector('#list').innerHTML = "Your Guesses so far: " + guessedLetters.join(', ');
 };
-// Function will be called when we reset everything
+// to reset
 var reset = function() {
   totalGuesses = 12;
   guessesLeft = 12;
@@ -39,7 +41,7 @@ compLetter();
 chgGuessesLeft();
 
 
-//When key is released it becomes the users guess
+//To get user's guess
 document.onkeyup = function(event) {
     guessesLeft--;
   var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
@@ -56,11 +58,9 @@ document.onkeyup = function(event) {
                 reset();
             }
         }else if(guessesLeft == 0){
-            // Then we will loss and we'll update the html to display the loss 
             losses++;
             document.querySelector('#losses').innerHTML = "Losses: " + losses;
             alert("Uh-oh! You didn't get this one.  Try again.");
-            // Then we'll call the reset. 
             reset();
         }
 };
