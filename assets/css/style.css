@@ -1,0 +1,34 @@
+body{
+      color: rgba(138, 137, 137, 0.925);
+      background-image: url(starry_background_192816.jpg);
+      border-color: black;
+      font-size: 24px;
+      line-height: 36px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      background-repeat: no-repeat; 	
+  }
+  .wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+  }
+
+  #game {
+      text-align: left;
+  }
+  #container {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      clear: both; 	
+  }
+
+  .instructions {
+    color: rgb(197, 51, 51);
+  }
+
+  h1 {
+      color: rgb(197, 51, 51);
+      font-weight: bold;
+  }
+  
